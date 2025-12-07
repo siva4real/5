@@ -35,7 +35,7 @@ sns.set_style("whitegrid")
 sns.set_context("talk", font_scale=0.9)
 
 # Create figure with specified dimensions for 512x512 output
-plt.figure(figsize=(8, 8))
+fig = plt.figure(figsize=(8, 8))
 
 # Create violinplot with professional styling
 ax = sns.violinplot(
@@ -67,8 +67,9 @@ ax.set_facecolor('#f8f9fa')
 # Adjust layout to prevent label cutoff
 plt.tight_layout()
 
-# Save the chart with exact specifications
-plt.savefig('chart.png', dpi=64, bbox_inches='tight')
+# Save the chart with exact 512x512 pixel dimensions
+# Remove bbox_inches='tight' to maintain exact dimensions
+plt.savefig('chart.png', dpi=64)
 print("Chart successfully generated and saved as 'chart.png'")
 print(f"Total samples analyzed: {len(data)}")
 print("\nResponse Time Statistics by Channel:")
